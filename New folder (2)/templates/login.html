@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+  <script defer src="{{ url_for('static', filename='login-page.js') }}"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Dashboard Giriş</h1>
+    
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Geçersiz Kullanıcı Adı <span id="error-msg-second-line">veya Şifre</span></p>
+    </div>
+    
+    <form action="{{ url_for('login') }}" method="POST" id="login-form">
+      <input type="email" name="username" id="username-field" class="login-form-field" placeholder="Kullanıcı Adınız">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Şifreniz">
+      <input type="submit" value="Giriş" onclick="login()" id="login-form-submit">
+    </form>
+  
+  </main>
+</body>
+
+</html>
